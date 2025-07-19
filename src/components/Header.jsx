@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <header className="bg-green-700 p-4 shadow-md flex justify-between items-center flex-wrap">
-      <h1 className="text-white text-3xl font-bold mb-2 md:mb-0">Greenhouse Store 🌱</h1>
+      <h1 className="text-white text-3xl font-bold mb-2 md:mb-0">Greenhouse Store</h1>
       <nav className="flex space-x-4 text-lg items-center"> {/* Added items-center here */}
         <Link to="/" className="text-white hover:text-green-200 transition-colors duration-200 flex items-center space-x-1">
           <MdHome className="text-xl" /> <span className='font-bold'>Home</span>

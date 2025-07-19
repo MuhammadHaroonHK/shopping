@@ -2,11 +2,20 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { increment, decrement, removeItem } from '../redux/cartSlice';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.items);
   const totalPrice = useSelector((state) => state.cart.totalPrice);
   const dispatch = useDispatch();
+
+  const handleRemove = (id, name) => {
+    dispatch(removeItem(id));
+    toast.error(`${name} removed from cart`, {
+      position: "top-right",
+      autoClose: 3000,
+    });
+  };
 
   return (
     <div className="container mx-auto p-4 md:p-6 lg:p-8 min-h-screen">
@@ -45,7 +54,7 @@ const Cart = () => {
                   </button>
                 </div>
                 <button
-                  onClick={() => dispatch(removeItem(item.id))}
+                  onClick={() => handleRemove(item.id, item.name)}
                   className="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition-colors duration-200 self-center sm:self-auto"
                 >
                   Remove
