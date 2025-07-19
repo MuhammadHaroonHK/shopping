@@ -6,7 +6,6 @@ import Header from './components/Header';
 import LandingPage from './components/LandingPage';
 import ProductList from './components/ProductList';
 import Cart from './components/Cart';
-import './App.css';
 
 const App = () => {
   return (
